@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt - br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>/*Comentario na parte de CSS3*/
+        body 
+        {
+            background-color: white;
+            color: black;
+            font: normal 24pt Arial;
+        }
+    h1 
+    {
+        color: red;
+    }
+    </style>
+</head>
+<body><!--Comentario na parte de HTML5-->
+    <h1>Olá Mundo</h1>
+    <p>Me livrei da maldição</p>
+    <script>
+        //Comentario na parte de JAVASCRIP
+        
+        var n1 = Number(window.prompt('Digite um numero: '));
+        var n2 = Number(window.prompt('Digite outro numero: '));
+
+        let n3 = Number.parseInt(window.prompt("Digite mais um numero: "));
+        const n4 = parseInt(window.prompt("Digite so mais um numero: "));
+        
+        var r = n1 + n2 + n3 + n4
+        
+        window.alert(`O resultado da soma de ${n1} com ${n2}, ${n3} e ${n4}... é ${r}`);//Este metodo so funciona com crase          
+        //(number + number) soma
+        //(string + string) concatenação  
+    </script>
+</body>
+</html>

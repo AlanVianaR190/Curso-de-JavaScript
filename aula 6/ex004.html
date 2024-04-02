@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt - br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            font: normal 24pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = String(window.prompt("Qual seu nome? "));
+        let salario = Number(window.prompt("Digite um valor: "))                                   
+        
+        window.document.writeln(`Seu nome é <strong>${nome}</strong>, e possui ${nome.length} letras!<br>`);//<strong>...</strong> txt em negrito
+        window.document.write(`Seu nome em letras minusculas fica assim ${nome.toLowerCase()}!<br>`);//quantidade de letras, minuscula & maiusculas
+        document.write(`Seu nome em letras maiusculas fica assim ${nome.toUpperCase()}!<br>`);        
+        
+        document.write("Voce vale " + salario.toLocaleString("pt-br", {style: "currency", currency: "BRL"}));
+
+    </script>
+</body>
+</html>
