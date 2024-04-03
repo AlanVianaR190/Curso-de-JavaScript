@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Cadastro de Nacionalidade</h1>
+
+    <!--Campo de entrada para o país-->
+    Digite aqui o seu pais: <input type="text" name="txtcountry" id="txtcountry">
+
+    <!--Botão para acionar a função de busca-->
+    <input type="button" value="Verificar" onclick="buscar()">
+
+    <!--Div para exibir a resposta da busca-->
+    <div id="resposta"></div>
+
+    <script>
+        function buscar(){
+
+            //Captura o valor inserido no campo de entrada do país
+            let pais = window.document.querySelector("input#txtcountry").value
+
+            //Seleciona a div onde a resposta será exibida
+            let resposta = window.document.querySelector("div#resposta");
+
+            //Exibe o país inserido
+            resposta.innerHTML = `<p>O seu pais e o: ${pais}</p>`
+
+            //Converte o país para letras minúsculas
+            pais = pais.toLowerCase();
+
+            //Verifica se o país é "brasil" e exibe a nacionalidade correspondente
+            if (pais === 'brasil'){
+                resposta.innerHTML += `<p>Voce e <strong>Brasileiro</strong>!</p>`
+            }
+            else{
+                resposta.innerHTML += `<p>Voce e <strong>Estrangeiro</strong>!</p>` 
+            }
+
+        }
+    </script>
+</body>
+</html>
