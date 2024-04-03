@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        
+        <div>
+            
+            <p>Ano de Nascimento:
+                
+                <!-- tag usada para criar um campo de entrada de dados -->
+                <input type="number" name="year" id="year" min="0">
+            </p>
+            
+            <p>Sexo:
+                
+                <!--permite que os usuários escolham uma opção exclusiva de um conjunto de opções,
+                quando utilizar o type="radio" sempre utilizar o name= como referencia no javascript-->
+                <input type="radio" name="gender" id="genderM" checked>
+                <label for="male">Masculino</label>
+                <input type="radio" name="gender" id="genderF">
+                <label for="female">Feminino</label>
+            </p>
+            
+            <p>
+                
+                <!--cria um botão clicável que pode ser usado para acionar uma ação JavaScript ou enviar um formulário-->
+                <input type="button" value="verificar" onclick="detectar()">
+            </p>
+        
+        </div>
+        
+        <!--tag <img> com um id= para alterar a imagem de acordo com a idade-->
+        <div id="msg">
+            Prencha os dados acima para ver o resultado!
+        </div>
+    
+    </section>
+    <footer>
+        <p>&copy; Curso em Video</p>
+    </footer>
+    
+    <!--na tag <script> um src= com o link do script da pagina-->
+    <script src="codigo.js"></script>
+
+</body>
+</html>
