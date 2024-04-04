@@ -114,7 +114,7 @@ function verificar(){
         msgm.innerHTML += `<p>O maior valor informado foi ${maior}</p>`
         msgm.innerHTML += `<p>O menor valor informado foi ${menor}</p>`
         msgm.innerHTML += `<p>Somando todos os valores, temos ${soma}</p>`
-        msgm.innerHTML += `<p>A media dos valores digitados é ${media}</p>`
+        msgm.innerHTML += `<p>A media dos valores digitados é ${media.toFixed(2)}</p>`
 
     }
     
