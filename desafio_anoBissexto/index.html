@@ -29,11 +29,11 @@
             //
             var ano = Number(window.prompt("Qual é o ano que vc quer verificar?"));
             //
-            if (isNaN(ano) || ano > data){
+            if (isNaN(ano) || ano > data || ano <= 0){
                 window.alert("Digite um valor valido!");
             }
             else {
-                resposta.innerHTML = `Analisando o ano de ${ano}...`;
+                resposta.innerHTML = `Analisando o ano de ${ano}...<br>`;
                 if (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0){
                     resposta.innerHTML += `<P>O ano de ${ano} <mark class="sim" >É BISSEXTO!</mark> &#9989 </P>`
                 }

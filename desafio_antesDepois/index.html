@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes & Depois</title>
+    <style>
+        .botao {
+            height: 45pt;
+            width: 150pt;
+            font-size: 12pt;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Antes & Depois</h2>
+    <input class="botao" type="button" value="Antecessor & Sucessor" onclick="verificar()">
+    <script>
+        function verificar(){
+            let num = Number(window.prompt("Digite um numero inteiro qualquer: "));
+            if (isNaN(num)) {
+                window.alert("Digite um numeto válido");
+            }
+            else {
+                let antes = num - 1;
+                let depos = num + 1;
+                // \n pular para linha de baixo, pode ser usado no prompt
+                window.alert(`Antes de ${num}, temos o numero ${antes}.\nDepois de ${num}, temos o numero ${depos}.`);
+            }
+        }
+    </script>
+</body>
+</html>
