@@ -19,13 +19,39 @@
     <h1>Boas Vindas</h1>
     <input id="botao" type="button" value="Inicie o desafio" onclick="desafio()">
     <script>
-        function desafio(){
-            const nome = String(window.prompt("Qual seu nome? "));
-            let idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));
-            while(isNaN(idade)){
-                window.alert("Opção invalida, digite um numero inteiro para idade!");
-                idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));  
+        //
+        function obterNome(){
+            // o  metodo trim() retira os espaços vazios no começo e no fim
+            let nome = String(window.prompt("Qual seu nome? ")).trim();
+            if (!nome){
+                window.alert("Digite um nome, o campo não pode estar vazio!");
+                // caso o campo nome esteja vazio retorna a função novamente
+                return obterNome();
             }
+            nomes = nome.split(" ");
+            let nome1 = [];
+            for (let nome of nomes){
+                nome = nome[0].toUpperCase() + nome.substring(1);
+                nome1.push(nome);
+            }
+            nome = nome1.join(" ");
+            return nome;
+        }
+        function obterIdade(nome){
+            let idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));
+            while(isNaN(idade) || idade < 0){
+                window.alert("Opção invalida, digite um numero inteiro valido para idade!");
+                idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));
+            }
+            return idade;
+        }
+        //
+        function desafio(){
+            //
+            let nome = obterNome();
+            //
+            let idade = obterIdade(nome);
+            //
             window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`);
         }
     </script>
