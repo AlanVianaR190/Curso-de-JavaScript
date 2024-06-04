@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo</title>
+    <style>
+        #botao{
+            height: 45pt;
+            width: 120pt;
+            font-size: medium;
+        }
+        body{
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boas Vindas</h1>
+    <input id="botao" type="button" value="Inicie o desafio" onclick="desafio()">
+    <script>
+        function desafio(){
+            const nome = String(window.prompt("Qual seu nome? "));
+            let idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));
+            while(isNaN(idade)){
+                window.alert("Opção invalida, digite um numero inteiro para idade!");
+                idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));  
+            }
+            window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`);
+        }
+    </script>
+</body>
+</html>
