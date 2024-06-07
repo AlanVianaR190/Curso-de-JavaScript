@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: darkblue;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .botao{
+            height: 50pt;
+            width: 100pt;
+            font-size: medium;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 1.5px 1.5px 2.5px rgba(0, 0, 0, 0.5); 
+            cursor: pointer;
+            border: none;
+            padding: 20px;
+            background-color: lightgray;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio das mensagens</h1>
+    <input class="botao" type="button" value="Botão 1" onclick="botao_1()">
+    <input class="botao" type="button" value="Botão 2" onclick="botao_2()">
+    <input class="botao" type="button" value="Botão 3" onclick="botao_3()">
+    <script>
+        function botao_1(){
+            window.alert("Você clicou no 1º botão!");
+        }
+        function botao_2(){
+            window.alert("Você clicou no 2º botão!");
+        }
+        function botao_3(){
+            window.alert("Você clicou no 3º botão!");
+        }
+    </script>
+</body>
+</html>
