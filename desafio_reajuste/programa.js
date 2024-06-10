@@ -30,6 +30,8 @@ function obterSalario(nome){
         return salario;
     }
 }
+// função porcentagem de aumento
+// função valor atualizado do salario
 function formatValor(v){
     return new Intl.NumberFormat("pt-br", {style: "currency", currency: "BRL", minimumFractionDigits: 2, maximumFractionDigits: 2}).format(v);
 }
