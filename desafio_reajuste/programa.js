@@ -38,22 +38,32 @@ function obterPorcent(nome){
     }
     return porcentagem;
 }
-// função valor atualizado do salario
+function porcentAument(valor, porcent){
+    aumento = valor * (porcent/100);
+    return aumento;
+}
+function totalSal(valor, aument){
+    total = valor + aument;
+    return formatValor(total);
+}
 function formatValor(v){
     return new Intl.NumberFormat("pt-br", {style: "currency", currency: "BRL", minimumFractionDigits: 2, maximumFractionDigits: 2}).format(v);
 }
 function formatPorcent(v){
     return new Intl.NumberFormat("pt-br", {minimumFractionDigits: 1, maximumFractionDigits: 1}).format(v);
 }
-function respostas(nome, valor, porcent){
+function respostas(nome, valor, porcent, aument, total){
     let resp = window.document.querySelector("p#resposta");
     resp.innerHTML = `<h2>${nome} ira receber um aumento salarial!</h2>`;
-    resp.innerHTML += `<p>O salario atual era de ${formatValor(valor)}</p>`;
-    resp.innerHTML += `<p>Com o aumento de ${formatPorcent(porcent)}%,</p>`;
+    resp.innerHTML += `<p>O salario atual era de ${formatValor(valor)}.</p>`;
+    resp.innerHTML += `<p>Com o aumento de ${formatPorcent(porcent)}%, o sálario vai aumentar ${formatValor(aument)} no proximo mês.</p>`
+    resp.innerHTML += `<p>E a partir dai, ${nome} vai passar a ganhar ${total}.</p>`;
 }
 function principal(){
     let nome = obterNome();
     let salario = obterSalario(nome);
     let porcentagem = obterPorcent(nome);
-    respostas(nome, salario, porcentagem);
+    let aumento = porcentAument(salario, porcentagem);
+    let total = totalSal(salario, aumento);
+    respostas(nome, salario, porcentagem, aumento, total);
 }
