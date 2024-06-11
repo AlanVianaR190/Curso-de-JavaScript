@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ano Bissexto</title>
     <style>
-        /*  */
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        #botao{
+            height: 45pt;
+            width: 100pt;
+            font-size: medium;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 1.5px 1.5px 2.5px rgba(0, 0, 0, 0.5); 
+            cursor: pointer;
+        }
         .sim {
             background-color: greenyellow;
         }
@@ -16,32 +29,8 @@
 </head>
 <body>
     <h1>Ano Bissexto</h1>
-    <input type="button" value="Verificar" onclick="verificar()">
+    <input id="botao" type="button" value="Verificar" onclick="verificar()">
     <p id="resposta">Informe um ano para saber se ele e bissexto.</p>
-    <script>
-        //
-        const date = new Date();
-        const data = date.getFullYear();
-        //
-        function verificar(){
-            //
-            const resposta = window.document.querySelector("p#resposta");
-            //
-            var ano = Number(window.prompt("Qual é o ano que vc quer verificar?"));
-            //
-            if (isNaN(ano) || ano > data || ano <= 0){
-                window.alert("Digite um valor valido!");
-            }
-            else {
-                resposta.innerHTML = `Analisando o ano de ${ano}...<br>`;
-                if (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0){
-                    resposta.innerHTML += `<P>O ano de ${ano} <mark class="sim" >É BISSEXTO!</mark> &#9989 </P>`
-                }
-                else {
-                    resposta.innerHTML += `<P>O ano de ${ano} <mark class="nao" >NÃO É BISSEXTO!</mark> &#10060 </P>`
-                }
-            }
-        }
-    </script>
+    <script src="programa.js"></script>
 </body>
 </html>
