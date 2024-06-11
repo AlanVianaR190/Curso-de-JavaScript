@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhaskara</title>
     <style>
-        body {
+        body{
             font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
-        .botao {
+        .botao{
             height: 45pt;
             width: 100pt;
-            font-size: 15pt;
+            font-size: medium;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 1.5px 1.5px 2.5px rgba(0, 0, 0, 0.5); 
+            cursor: pointer;
         }
     </style>
 </head>
@@ -19,37 +25,6 @@
     <h1>Resolvendo Bhaskara</h1>
     <input class="botao" type="button" value="Calcular" onclick="calcular()">
     <p id="resposta">Considerando uma equação no formato <em><strong>a</strong>x<sup>2</sup> + <strong>b</strong>x + <strong>c</strong> = 0</em>, aperte <br> o botão acima para calcular o valor de &Delta;.</p>
-    <script>
-        //
-        function bhaskara(a, b, c){
-            const calc = (b ** 2) - (4 * (a * c));
-            return calc
-        }
-        //
-        function numberCheck(text){
-            while (true){
-                const number = Number(window.prompt(text));
-                if (!isNaN(number)){
-                    return number;
-                }
-                window.alert("Valor invalido, digite um numero inteiro!");
-            }
-        }
-        //
-        function calcular(){
-            //
-            let numA = numberCheck("Qual o valor de a: ");
-            let numB = numberCheck("Qual o valor de b: ");
-            let numC = numberCheck("Qual o valor de c: ");
-            //
-            let resposta = window.document.querySelector("p#resposta");
-            //
-            let calculo = bhaskara(numA, numB, numC);
-            resposta.innerHTML = `<h2>Resolvendo...</h2>`;
-            resposta.innerHTML += `<p>A equação atual é <strong>${numB}<sup>2</sup> + ${numA}x + ${numC} = 0</strong></p>`;
-            resposta.innerHTML += `<p>O calculo realizado será <strong>&Delta; = ${numB}<sup>2</sup> - 4 . ${numA} . ${numC}</strong></p>`;
-            resposta.innerHTML += `<p>O valor calculado foi <strong><mark>&Delta; = ${calculo}</mark></strong></p>`;
-        }
-    </script>
+    <script src="programa.js"></script>
 </body>
 </html>
