@@ -17,31 +17,43 @@ function formatNome(nome){
     return nomes_juntos;
 }
 function obterSalario(nome){
-    let salario = Number(window.prompt(`Qual o sálario de ${nome}`));
+    let salario = Number(window.prompt(`Qual o sálario de ${nome}?`));
     while(true){
         if(isNaN(salario)){
-            window.alert("Opção invalida");
-            return obterSalario
+            window.alert("Opção invalida!");
+            return obterSalario(nome);
         }
         else if(salario < 1320){
             window.alert("Salario digitado abaixo do valor minimo");
-            return obterSalario;
+            return obterSalario(nome);
         }
         return salario;
     }
 }
-// função porcentagem de aumento
+function obterPorcent(nome){
+    let porcentagem = Number(window.prompt(`O sálario de ${nome} vai ser reajustado em qual porcentagem?`));
+    while(isNaN(porcentagem) || porcentagem <= 0){
+        window.alert("Opção invalida!");
+        return obterPorcent(nome);
+    }
+    return porcentagem;
+}
 // função valor atualizado do salario
 function formatValor(v){
     return new Intl.NumberFormat("pt-br", {style: "currency", currency: "BRL", minimumFractionDigits: 2, maximumFractionDigits: 2}).format(v);
 }
-function respostas(nome, valor){
+function formatPorcent(v){
+    return new Intl.NumberFormat("pt-br", {minimumFractionDigits: 1, maximumFractionDigits: 1}).format(v);
+}
+function respostas(nome, valor, porcent){
     let resp = window.document.querySelector("p#resposta");
     resp.innerHTML = `<h2>${nome} ira receber um aumento salarial!</h2>`;
     resp.innerHTML += `<p>O salario atual era de ${formatValor(valor)}</p>`;
+    resp.innerHTML += `<p>Com o aumento de ${formatPorcent(porcent)}%,</p>`;
 }
 function principal(){
     let nome = obterNome();
     let salario = obterSalario(nome);
-    respostas(nome, salario);
+    let porcentagem = obterPorcent(nome);
+    respostas(nome, salario, porcentagem);
 }
