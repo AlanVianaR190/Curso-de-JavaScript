@@ -5,55 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem vindo</title>
     <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
         #botao{
             height: 45pt;
-            width: 120pt;
+            width: 125pt;
             font-size: medium;
-        }
-        body{
-            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 1.5px 1.5px 2.5px rgba(0, 0, 0, 0.5); 
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>Boas Vindas</h1>
     <input id="botao" type="button" value="Inicie o desafio" onclick="desafio()">
-    <script>
-        //
-        function obterNome(){
-            // o  metodo trim() retira os espaços vazios no começo e no fim
-            let nome = String(window.prompt("Qual seu nome? ")).trim();
-            if (!nome){
-                window.alert("Digite um nome, o campo não pode estar vazio!");
-                // caso o campo nome esteja vazio retorna a função novamente
-                return obterNome();
-            }
-            nomes = nome.split(" ");
-            let nome1 = [];
-            for (let nome of nomes){
-                nome = nome[0].toUpperCase() + nome.substring(1);
-                nome1.push(nome);
-            }
-            nome = nome1.join(" ");
-            return nome;
-        }
-        function obterIdade(nome){
-            let idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));
-            while(isNaN(idade) || idade < 0){
-                window.alert("Opção invalida, digite um numero inteiro valido para idade!");
-                idade = Number(window.prompt(`Olá ${nome}, Quantos anos vc tem? `));
-            }
-            return idade;
-        }
-        //
-        function desafio(){
-            //
-            let nome = obterNome();
-            //
-            let idade = obterIdade(nome);
-            //
-            window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`);
-        }
-    </script>
+    <script src="programa.js"></script>
 </body>
 </html>

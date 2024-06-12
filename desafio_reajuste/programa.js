@@ -1,5 +1,5 @@
 function obterNome(){
-    let nome = String(window.prompt("Qual o nome do funcionario?"));
+    let nome = String(window.prompt("Qual o nome do funcionario?")).trim();
     while(!nome){
         window.alert("Digite um nome, o campo não pode permanecer vazio!")
         return obterNome();
