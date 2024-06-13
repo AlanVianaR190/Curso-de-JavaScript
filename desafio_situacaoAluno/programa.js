@@ -63,13 +63,13 @@ function respostas(nome, notas_n1, nota_n2, nota_fin){
 function respFinal(nota_fin){
     let resposta = window.document.querySelector("div#resposta2");
     if (nota_fin < 3.0){
-        resposta.innerHTML = "<p>Com média abaixo de 3,0 o aluno esta REPROVADO!</p>";
+        resposta.innerHTML = "<p>Com média abaixo de 3,0 o aluno esta <mark class= 'vrmelho'><b>REPROVADO!</b></mark></p>";
     }
     else if (nota_fin >= 3.0 && nota_fin < 6.0){
-        resposta.innerHTML = "<p>Com média entre 3,0 e 6,0 o aluno esta em RECUPERAÇÃO!</p>";
+        resposta.innerHTML = "<p>Com média entre 3,0 e 6,0 o aluno esta em <mark class= 'amarelo'><b>RECUPERAÇÃO!</b></mark></p>";
     }
     else{
-        resposta.innerHTML = "<p>Com média acima de 6,0 o aluno esta APROVADO!</p>";
+        resposta.innerHTML = "<p>Com média acima de 6,0 o aluno esta <mark class= 'vrde'><b>APROVADO!</b></mark></p>";
     }
 }
 function iniciar(){
